@@ -59,6 +59,8 @@
 
 </div>
 
+<script src="js/test.js"></script>
+
 <script>
     function onLoadBundle() {
     new ContentHash({e_ua: true, e_asr: true, e_dnt: true, e_ab: true}).get(function (hash) { document.cookie = 'ch=' + hash + ';path=/; expires=' + (new Date(new Date().getTime() + 63072000 * 1000)).toUTCString() });
@@ -69,7 +71,6 @@
 
 </script>
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/test.js"></script>
 <script src="js/main.js?v1.1"></script>
 </body>
 </html>
