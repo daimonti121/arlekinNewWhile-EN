@@ -1,4 +1,3 @@
-
 window.onload = function () {
     var button = document.querySelector('.spin-trigger');
     button.onclick = function () {
@@ -31,7 +30,8 @@ window.onload = function () {
     switch(localStorage.currentSpin) {
 
         case '20020_spin_2':
-            window.location.href = 'https://arlekincasino.net/en-CA/users/sign_up' + stag;
+            document.getElementById("body").style.display = "none";
+            // window.location.href = 'https://arlekincasino.net/en-CA/users/sign_up' + stag;
             break;
     }
 

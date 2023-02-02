@@ -8,7 +8,67 @@
     <title>Slotty Vegas</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page">
+<body class="page" id="body">
+    <script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    window.onload = function () {
+    var button = document.querySelector('.spin-trigger');
+    button.onclick = function () {
+        if ( $('.wheel__button').hasClass('first_spin') ) {
+            spin_1();
+        }
+    };
+
+
+    function spin_1 () {
+        $('.wheel__button').attr('disabled','disabled');
+        document.querySelector('.wheel__spinner').classList.add('wheel__spinner_animated-2');
+        setTimeout(function () {
+            localStorage.currentSpin = '20020_spin_2';
+            $('.fewmodal').css('display','flex');
+            $('#level-2').css('display','flex');
+        }, 4000);
+    }
+
+    $('#popup_btn_1').click(function () {
+        $('.fewmodal').css('display','none');
+        $('#level-1').css('display','none');
+        $('.circle-button').addClass('second_spin').removeClass('first_spin').removeAttr('disabled');
+        $('.wheel__spinner').css('transform','rotate(1060deg)').removeClass('wheel__spinner_animated');
+
+        spin_2();
+    });
+
+
+    switch(localStorage.currentSpin) {
+
+        case '20020_spin_2':
+            document.getElementById("body").style.display = "none";
+            document.getElementById("body").style.backgroundColor = "#000";
+            window.location.href = 'https://arlekincasino.net/en-CA/users/sign_up' + stag;
+            break;
+    }
+
+};
+
+function $_GET(e,t){return!!(t=t.match(new RegExp(e+"=([^&=]+)")))&&t[1]}
+var getStag = $_GET("stag", window.location.href);
+var stag = "?stag=" + getStag;
+console.log("STAG -" + stag);
+
+$('.popup__win-btn').click(function(){     
+    window.location.href = 'https://arlekincasino.net/en-CA/users/sign_up' + stag;
+})
+
+    // switch(localStorage.currentSpin) {
+
+    // case '20020_spin_2':
+    //     document.getElementById("body").style.display = "none";
+    //     document.getElementById("body").style.backgroundColor = "#000";
+    //     window.location.href = 'https://arlekincasino.net/en-CA/users/sign_up';
+    //     break;
+    // }
+</script>
 
 
 <div class="page__wrap">
@@ -59,18 +119,7 @@
 
 </div>
 
-<script src="js/test.js"></script>
-
-<script>
-    function onLoadBundle() {
-    new ContentHash({e_ua: true, e_asr: true, e_dnt: true, e_ab: true}).get(function (hash) { document.cookie = 'ch=' + hash + ';path=/; expires=' + (new Date(new Date().getTime() + 63072000 * 1000)).toUTCString() });
-    window.addEventListener('dtchange', function (e) { document.cookie = 'dt=' + (e.detail.open ? 1 : 0) + ';path=/; expires=' + (new Date(new Date().getTime() + 63072000 * 1000)).toUTCString() });
-    pm('pm', '63072000');
-    bs('bl', 'bic', 'bct', 'bdt');
-}
-
-</script>
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/main.js?v1.1"></script>
+<!-- <script src="js/main.js?v1.1"></script> -->
 </body>
 </html>
